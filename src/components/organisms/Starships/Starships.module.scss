@@ -1,0 +1,41 @@
+.root {
+  width: 100%;
+  max-width: 624px;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 800px) {
+    width: 624px;
+    max-width: initial;
+  }
+
+  @media (min-width: 1200px) {
+    width: 948px;
+  }
+  .rmsc {
+    padding-bottom: 20px;
+    max-width: 300px;
+    width: 100%;
+    align-self: end;
+  }
+}
+
+.header {
+  @media (min-width: 540px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.title {
+  padding-bottom: 20px;
+}
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 24px;
+  row-gap: 32px;
+  padding-bottom: 40px;
+}

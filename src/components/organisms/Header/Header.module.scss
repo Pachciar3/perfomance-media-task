@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  img {
+    max-height: 120px;
+    width: auto;
+  }
+  @media (min-width: 768px) {
+    img {
+      max-height: 160px;
+    }
+  }
+}

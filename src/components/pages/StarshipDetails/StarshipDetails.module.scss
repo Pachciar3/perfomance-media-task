@@ -1,0 +1,19 @@
+.main {
+  flex-grow: 1;
+  padding: 20px 40px;
+
+  max-width: 1200px;
+  @media (min-width: 648px) {
+    margin: 0 auto;
+  }
+  .title {
+    padding-bottom: 24px;
+    text-align: left;
+    color: $secondary-typography-color;
+  }
+
+  .list {
+    list-style: none;
+    padding-bottom: 24px;
+  }
+}

@@ -1,0 +1,129 @@
+.root {
+  display: flex;
+  width: 100%;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  background-color: $secondary-bg-color;
+  align-items: center;
+  transition: border-radius 0.2s ease-in-out;
+  &:has(.input:focus) {
+    outline: 1px solid rgba(255, 255, 255, 0.4901960784);
+  }
+  &.open {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .icon {
+    width: 30px;
+  }
+  .input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    padding: 4px 10px 4px 10px;
+    border-bottom: 1px solid $primary-bg-color;
+    &:focus-visible {
+      outline: unset;
+    }
+  }
+  @media (min-width: 648px) {
+    &__name {
+      width: 250px;
+    }
+    &__value {
+      max-width: 300px;
+    }
+  }
+}
+
+.searchSection {
+  position: relative;
+  width: 948px;
+}
+
+.dropdown {
+  display: none;
+  &.open {
+    position: absolute;
+    top: 69px;
+    left: -1px;
+    z-index: 20;
+    border: 1px solid #ffffff7d;
+    border-radius: 4px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    display: block;
+    background-color: $secondary-bg-color;
+    width: calc(100% + 2px);
+    padding: 8px 0px;
+    min-height: 50px;
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+}
+.resultItemLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  transition: ease-in 0.2s $secondary-bg-color;
+  &:hover {
+    background-color: $primary-bg-color;
+    color: $primary-typography-color;
+  }
+  .arrow {
+    width: 20px;
+    transform: rotate(-90deg);
+  }
+}
+.list {
+  list-style: none;
+}
+
+.message {
+  text-align: center;
+  display: block;
+  padding: 14px 16px;
+  font-size: 20px;
+}
+.btn {
+  margin: 7px auto 14px auto;
+  display: flex;
+  align-items: center;
+  .arrow {
+    width: 20px;
+    margin-left: 8px;
+  }
+}
+
+.loading {
+  z-index: 22;
+  display: block;
+  position: absolute;
+  top: 76px;
+  right: 22px;
+  font-size: 0;
+  &::after {
+    content: " ";
+    display: block;
+    width: 14px;
+    height: 14px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: dual-ring 1.2s linear infinite;
+  }
+}
+
+@keyframes dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
