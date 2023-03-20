@@ -1,11 +1,9 @@
 import { FilmsResponse } from "@/api/methods/getAllFilms/FilmsResponse";
 import { StarshipsResponse } from "@/api/methods/getAllStarships";
-import { SearchBox } from "@/components/molecules/SearchBox";
-import { Starships as StarshipsTable } from "@/components/organisms/Starships";
-import { Routes } from "@/types/route";
+import { SearchBox } from "@/components/organisms/SearchBox";
+import { StarshipsExplorer } from "@/components/organisms/StarshipsExplorer";
 import Head from "next/head";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Navigation from "./components/Navigation";
 import styles from "./Starships.module.scss";
 
 export interface StarshipsProps {
@@ -15,11 +13,7 @@ export interface StarshipsProps {
 
 export default function Starships(props: StarshipsProps) {
   const { starships, films } = props;
-  const router = useRouter();
-  const page =
-    typeof router.query.page === "string"
-      ? Number(router.query.page)
-      : undefined;
+
   return (
     <>
       <Head>
@@ -29,25 +23,8 @@ export default function Starships(props: StarshipsProps) {
       </Head>
       <main className={styles.main}>
         <SearchBox />
-        <StarshipsTable data={starships?.results} films={films?.results} />
-        <div className={styles.navigation}>
-          {starships?.previous && page && (
-            <Link
-              className={styles.navigation__left}
-              href={`${Routes.STARSHIPS}/${page - 1}`}
-            >
-              Previous page
-            </Link>
-          )}
-          {starships?.next && page && (
-            <Link
-              className={styles.navigation__right}
-              href={`${Routes.STARSHIPS}/${page + 1}`}
-            >
-              Next page
-            </Link>
-          )}
-        </div>
+        <StarshipsExplorer data={starships?.results} films={films?.results} />
+        <Navigation next={starships?.next} previous={starships?.previous} />
       </main>
     </>
   );
