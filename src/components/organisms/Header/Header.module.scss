@@ -6,12 +6,12 @@
   padding: 40px;
   text-align: center;
   img {
-    max-height: 120px;
+    max-height: 180px;
     width: auto;
   }
   @media (min-width: 768px) {
     img {
-      max-height: 160px;
+      max-height: 260px;
     }
   }
 }
