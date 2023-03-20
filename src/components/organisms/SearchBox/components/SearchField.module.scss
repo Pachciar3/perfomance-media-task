@@ -1,0 +1,40 @@
+.root {
+  display: flex;
+  width: 100%;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  background-color: $secondary-bg-color;
+  align-items: center;
+  transition: border-radius 0.2s ease-in-out;
+  &:has(.input:focus) {
+    outline: 1px solid rgba(255, 255, 255, 0.4901960784);
+  }
+  &.open {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .icon {
+    width: 30px;
+  }
+  .input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    padding: 4px 10px 4px 10px;
+    border-bottom: 1px solid $primary-bg-color;
+    &:focus-visible {
+      outline: unset;
+    }
+  }
+  @media (min-width: 648px) {
+    &__name {
+      width: 250px;
+    }
+    &__value {
+      max-width: 300px;
+    }
+  }
+}

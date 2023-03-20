@@ -9,7 +9,7 @@
     "lint": "next lint",
     "prepare": "husky install",
     "prettier": "prettier --write src/.",
-    "pre-commit": "prettier --write src/. && next lint && git add .",
+    "pre-commit": "next lint",
     "lint:fix": "eslint --fix --ext .ts,.tsx . && git add ."
   },
   "dependencies": {
