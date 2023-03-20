@@ -1,4 +1,5 @@
 import { object, string, number, array } from "yup";
+
 import { starshipSchema } from "../../validators/validateStarship";
 
 export const allStarshipsResponseSchema = object({

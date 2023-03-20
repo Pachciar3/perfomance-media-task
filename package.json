@@ -9,7 +9,7 @@
     "lint": "next lint",
     "prepare": "husky install",
     "pre-commit": "next lint",
-    "lint:fix": "eslint --fix --ext .ts,.tsx ."
+    "lint:fix": "eslint --fix --ext .ts,.tsx . && git add ."
   },
   "dependencies": {
     "@types/node": "18.15.3",

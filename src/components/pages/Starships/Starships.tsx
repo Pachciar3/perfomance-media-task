@@ -4,6 +4,7 @@ import { FilmsResponse } from "@/api/methods/getAllFilms/FilmsResponse";
 import { StarshipsResponse } from "@/api/methods/getAllStarships";
 import { SearchBox } from "@/components/organisms/SearchBox";
 import { StarshipsExplorer } from "@/components/organisms/StarshipsExplorer";
+
 import Navigation from "./components/Navigation";
 import styles from "./Starships.module.scss";
 

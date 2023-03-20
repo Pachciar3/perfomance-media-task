@@ -5,8 +5,9 @@
     "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
     "max-lines": ["warn", 230],
     "import/order": [
-      1,
+      "warn",
       {
+        "newlines-between": "always",
         "groups": [
           "external",
           "builtin",

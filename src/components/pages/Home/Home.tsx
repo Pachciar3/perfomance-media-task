@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
+
 import { Routes } from "@/types/route";
+
 import styles from "./Home.module.scss";
 
 export default function Home() {

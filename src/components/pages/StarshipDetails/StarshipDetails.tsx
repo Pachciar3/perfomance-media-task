@@ -1,11 +1,11 @@
 import Head from "next/head";
-
-
 import { useRouter } from "next/router";
 import { useCallback } from "react";
+
 import { Starship } from "@/api/types/Starship";
 import { ListItem } from "@/components/atoms/ListItem";
 import { Button, styles as buttonStyles } from "@/components/atoms/Button";
+
 import styles from "./StarshipDetails.module.scss";
 
 export interface StarshipDetailsProps {

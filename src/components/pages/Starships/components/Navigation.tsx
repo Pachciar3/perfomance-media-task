@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+
 import { Routes } from "@/types/route";
+
 import styles from "./Navigation.module.scss";
 
 export interface StarshipsProps {
