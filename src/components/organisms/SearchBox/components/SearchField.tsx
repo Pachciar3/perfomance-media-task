@@ -1,6 +1,7 @@
 import {
   ChangeEvent,
   Dispatch,
+  MutableRefObject,
   SetStateAction,
   useCallback,
   useMemo,
@@ -20,13 +21,13 @@ export interface SearchFieldProps {
   setResults: Dispatch<SetStateAction<Starship[] | null | undefined>>;
   setValue: Dispatch<SetStateAction<string>>;
   search: (value: string) => void;
+  divRef: MutableRefObject<HTMLDivElement | null>;
   value: string;
 }
 
 function SearchField(props: SearchFieldProps) {
-  const { setResults, search, setValue, value } = props;
+  const { setResults, search, setValue, value, divRef } = props;
 
-  const divRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleOutsideClick = useCallback(() => {

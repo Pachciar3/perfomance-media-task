@@ -1,6 +1,6 @@
 # Performance Media - recruitment task
 
-The application that allows you to check information about starships in StarWars
+The application that allows you to check information about starships in Star Wars
 
 ![Screenshot](https://i.imgur.com/eKMed09.png)
 

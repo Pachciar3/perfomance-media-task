@@ -35,6 +35,7 @@ function SearchBox() {
   return (
     <div ref={divRef} className={styles.searchSection}>
       <SearchField
+        divRef={divRef}
         setValue={setValue}
         value={value}
         setResults={setResults}
