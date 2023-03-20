@@ -1,10 +1,10 @@
+import { useState } from "react";
+import { Option } from "react-multi-select-component";
 import { Film } from "@/api/types/Film";
 import { Starship } from "@/api/types/Starship";
 import { getStarshipIdFromUrl } from "@/utils/getStarshipId";
-import { useState } from "react";
-import styles from "./StarshipsExplorer.module.scss";
 import { Starship as StarshipEl } from "@/components/molecules/Starship";
-import { Option } from "react-multi-select-component";
+import styles from "./StarshipsExplorer.module.scss";
 import ExplorerMultiSelect from "./components/ExplorerMultiSelect";
 
 export interface StarshipsExplorerProps {

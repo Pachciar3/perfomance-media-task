@@ -1,6 +1,6 @@
+import { GetStaticProps } from "next";
 import { RootLayout } from "@/layouts/RootLayout";
 import { getAllStarships } from "@/api/methods/getAllStarships";
-import { GetStaticProps } from "next";
 import { StarshipsResponse } from "@/api/methods/getAllStarships";
 import getAllFilms from "@/api/methods/getAllFilms/getAllFilms";
 import { FilmsResponse } from "@/api/methods/getAllFilms/FilmsResponse";

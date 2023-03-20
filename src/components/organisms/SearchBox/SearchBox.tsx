@@ -1,3 +1,5 @@
+import { ChangeEvent, useCallback, useMemo, useRef, useState } from "react";
+import clsx from "clsx";
 import { getAllStarships } from "@/api/methods/getAllStarships";
 import { Starship } from "@/api/types/Starship";
 import { Button } from "@/components/atoms/Button";
@@ -5,11 +7,9 @@ import useOutsideClick from "@/hooks/useOnClickOutside";
 import { Routes } from "@/types/route";
 import { debounce } from "@/utils/debounce";
 import { getStarshipIdFromUrl } from "@/utils/getStarshipId";
-import { ChangeEvent, useCallback, useMemo, useRef, useState } from "react";
 import styles from "./SearchBox.module.scss";
 import SearchIcon from "./assets/searchIcon.svg";
 import Arrow from "./assets/arrow.svg";
-import clsx from "clsx";
 
 export interface SearchBoxProps {}
 

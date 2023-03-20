@@ -4,7 +4,6 @@
     "@typescript-eslint/no-var-requires": 0,
     "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
     "max-lines": ["warn", 230],
-    "no-unused-vars": "error",
     "import/order": [
       1,
       {
@@ -18,15 +17,15 @@
         ],
         "pathGroups": [
           {
-            "pattern": "components",
+            "pattern": "@/components",
             "group": "internal"
           },
           {
-            "pattern": "layouts",
+            "pattern": "@/layouts",
             "group": "internal"
           },
           {
-            "pattern": "utils",
+            "pattern": "@/utils",
             "group": "internal"
           }
         ]

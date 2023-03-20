@@ -1,4 +1,3 @@
-import styles from "./Button.module.scss";
 import {
   ButtonHTMLAttributes,
   DetailedHTMLProps,
@@ -6,6 +5,7 @@ import {
   ReactNode,
 } from "react";
 import clsx from "clsx";
+import styles from "./Button.module.scss";
 
 export interface ButtonProps
   extends DetailedHTMLProps<
