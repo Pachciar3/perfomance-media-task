@@ -17,7 +17,7 @@ export interface ButtonProps
 
 function Button(props: ButtonProps) {
   const { children, className: _className, ...restOfProps } = props;
-
+  const test = "";
   return (
     <button
       className={clsx(

@@ -14,6 +14,7 @@ import clsx from "clsx";
 export interface SearchBoxProps {}
 
 function SearchBox(props: SearchBoxProps) {
+  const test = "";
   const [value, setValue] = useState<string>("");
   const [results, setResults] = useState<Starship[] | undefined | null>(null);
   const [loadMoreLink, setLoadMoreLink] = useState<string | null | undefined>(

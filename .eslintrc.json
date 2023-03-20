@@ -1,3 +1,36 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "@typescript-eslint/no-var-requires": 0,
+    "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+    "max-lines": ["warn", 230],
+    "no-unused-vars": "error",
+    "import/order": [
+      1,
+      {
+        "groups": [
+          "external",
+          "builtin",
+          "internal",
+          "sibling",
+          "parent",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "components",
+            "group": "internal"
+          },
+          {
+            "pattern": "layouts",
+            "group": "internal"
+          },
+          {
+            "pattern": "utils",
+            "group": "internal"
+          }
+        ]
+      }
+    ]
+  }
 }

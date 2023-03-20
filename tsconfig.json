@@ -21,6 +21,11 @@
       "@/utils": ["./src/utils/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/atoms/ListItem/ListItem.module.scss"
+  ],
   "exclude": ["node_modules"]
 }
