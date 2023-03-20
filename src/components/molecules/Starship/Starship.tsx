@@ -1,10 +1,10 @@
-import Link from "next/link";
-import { memo } from "react";
+import Link from 'next/link';
+import { memo } from 'react';
 
-import { Starship } from "@/api/types/Starship";
-import { Routes } from "@/types/route";
+import { Starship } from '@/api/types/Starship';
+import { Routes } from '@/types/route';
 
-import styles from "./Starship.module.scss";
+import styles from './Starship.module.scss';
 
 export interface StarshipProps {
   data: Starship;

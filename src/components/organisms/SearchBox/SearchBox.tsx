@@ -1,35 +1,35 @@
-import { ChangeEvent, useCallback, useMemo, useRef, useState } from "react";
-import clsx from "clsx";
+import { ChangeEvent, useCallback, useMemo, useRef, useState } from 'react';
+import clsx from 'clsx';
 
-import { getAllStarships } from "@/api/methods/getAllStarships";
-import { Starship } from "@/api/types/Starship";
-import { Button } from "@/components/atoms/Button";
-import useOutsideClick from "@/hooks/useOnClickOutside";
-import { Routes } from "@/types/route";
-import { debounce } from "@/utils/debounce";
-import { getStarshipIdFromUrl } from "@/utils/getStarshipId";
+import { getAllStarships } from '@/api/methods/getAllStarships';
+import { Starship } from '@/api/types/Starship';
+import { Button } from '@/components/atoms/Button';
+import useOutsideClick from '@/hooks/useOnClickOutside';
+import { Routes } from '@/types/route';
+import { debounce } from '@/utils/debounce';
+import { getStarshipIdFromUrl } from '@/utils/getStarshipId';
 
-import styles from "./SearchBox.module.scss";
-import SearchIcon from "./assets/searchIcon.svg";
-import Arrow from "./assets/arrow.svg";
+import styles from './SearchBox.module.scss';
+import SearchIcon from './assets/searchIcon.svg';
+import Arrow from './assets/arrow.svg';
 
 export interface SearchBoxProps {}
 
 function SearchBox(props: SearchBoxProps) {
-  const test = "";
-  const [value, setValue] = useState<string>("");
+  const test = '';
+  const [value, setValue] = useState<string>('');
   const [results, setResults] = useState<Starship[] | undefined | null>(null);
   const [loadMoreLink, setLoadMoreLink] = useState<string | null | undefined>(
-    null
+    null,
   );
   const [loading, setLoading] = useState<boolean>(false);
   const divRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleOutsideClick = useCallback(() => {
-    setValue("");
+    setValue('');
     if (inputRef.current) {
-      inputRef.current.value = "";
+      inputRef.current.value = '';
       setResults(null);
     }
   }, []);
@@ -60,7 +60,7 @@ function SearchBox(props: SearchBoxProps) {
   const handleLoadMore = useCallback(() => {
     if (loadMoreLink && value) {
       const queryParams = new URLSearchParams(loadMoreLink);
-      const page = queryParams.get("page");
+      const page = queryParams.get('page');
       if (page) {
         setLoading(true);
         getAllStarships(Number(page), value)
@@ -82,7 +82,7 @@ function SearchBox(props: SearchBoxProps) {
 
   const debouncedHandleChange = useMemo(
     () => debounce(handleChange, 300),
-    [handleChange]
+    [handleChange],
   );
 
   return (
@@ -112,7 +112,7 @@ function SearchBox(props: SearchBoxProps) {
                   <a
                     className={styles.resultItemLink}
                     href={`${Routes.STARSHIP}/${getStarshipIdFromUrl(
-                      result.url
+                      result.url,
                     )}`}
                   >
                     {result.name}

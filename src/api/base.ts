@@ -1,10 +1,10 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-async function request(endpoint: string, method: string = "GET") {
+async function request(endpoint: string, method: string = 'GET') {
   const config: RequestInit = {
     method,
     headers: {
-      "Content-type": "application/json",
+      'Content-type': 'application/json',
     },
   };
   const url = `${API_URL}${endpoint}`;

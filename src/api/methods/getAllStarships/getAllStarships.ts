@@ -1,14 +1,14 @@
-import { StarshipsResponse } from "./StarshipsResponse";
-import { allStarshipsResponseSchema } from "./validationSchema";
+import { StarshipsResponse } from './StarshipsResponse';
+import { allStarshipsResponseSchema } from './validationSchema';
 
 async function getAllStarships(
   page: number = 1,
-  searchQuery: string | undefined
+  searchQuery: string | undefined,
 ) {
   try {
-    const query = searchQuery ? `&search=${searchQuery}` : "";
+    const query = searchQuery ? `&search=${searchQuery}` : '';
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/starships?page=${page}${query}&format=json`
+      `${process.env.NEXT_PUBLIC_API_URL}/starships?page=${page}${query}&format=json`,
     );
     if (response.ok) {
       const data = await response.json();

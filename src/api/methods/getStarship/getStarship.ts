@@ -1,10 +1,10 @@
-import { Starship } from "../../types/Starship";
-import { starshipSchema } from "../../validators/validateStarship";
+import { Starship } from '../../types/Starship';
+import { starshipSchema } from '../../validators/validateStarship';
 
 async function getStarship(id: number) {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/starships/${id}?format=json`
+      `${process.env.NEXT_PUBLIC_API_URL}/starships/${id}?format=json`,
     );
     if (response.ok) {
       const data = await response.json();

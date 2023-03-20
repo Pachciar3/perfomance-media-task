@@ -8,7 +8,8 @@
     "start:build": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "pre-commit": "next lint",
+    "prettier": "prettier --write src/.",
+    "pre-commit": "prettier --write src/. && next lint && git add .",
     "lint:fix": "eslint --fix --ext .ts,.tsx . && git add ."
   },
   "dependencies": {
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
     "husky": "^8.0.3",
-    "sass": "^1.59.3"
+    "sass": "^1.59.3",
+    "prettier": "^2.8.4"
   }
 }

@@ -3,10 +3,10 @@ import {
   DetailedHTMLProps,
   memo,
   ReactNode,
-} from "react";
-import clsx from "clsx";
+} from 'react';
+import clsx from 'clsx';
 
-import styles from "./Button.module.scss";
+import styles from './Button.module.scss';
 
 export interface ButtonProps
   extends DetailedHTMLProps<
@@ -18,13 +18,13 @@ export interface ButtonProps
 
 function Button(props: ButtonProps) {
   const { children, className: _className, ...restOfProps } = props;
-  const test = "";
+  const test = '';
   return (
     <button
       className={clsx(
         styles.button,
         restOfProps.disabled && styles.disabled,
-        _className
+        _className,
       )}
       {...restOfProps}
     >

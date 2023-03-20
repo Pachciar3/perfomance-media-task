@@ -1,11 +1,11 @@
-import { GetStaticProps } from "next";
+import { GetStaticProps } from 'next';
 
-import { RootLayout } from "@/layouts/RootLayout";
-import { getAllStarships } from "@/api/methods/getAllStarships";
-import { StarshipsResponse } from "@/api/methods/getAllStarships";
-import getAllFilms from "@/api/methods/getAllFilms/getAllFilms";
-import { FilmsResponse } from "@/api/methods/getAllFilms/FilmsResponse";
-import { Starships } from "@/components/pages/Starships";
+import { RootLayout } from '@/layouts/RootLayout';
+import { getAllStarships } from '@/api/methods/getAllStarships';
+import { StarshipsResponse } from '@/api/methods/getAllStarships';
+import getAllFilms from '@/api/methods/getAllFilms/getAllFilms';
+import { FilmsResponse } from '@/api/methods/getAllFilms/FilmsResponse';
+import { Starships } from '@/components/pages/Starships';
 
 interface StarshipsPageProps {
   starships: StarshipsResponse | undefined;
@@ -37,11 +37,11 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps<StarshipsPageProps> = async (
-  context
+  context,
 ) => {
   const starships = await getAllStarships(
     context.params ? Number(context.params.page) : 1,
-    undefined
+    undefined,
   );
   const films = await getAllFilms();
 

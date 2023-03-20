@@ -1,3 +1,3 @@
 export function getStarshipIdFromUrl(url: string): string {
-  return url.split("/")[5];
+  return url.split('/')[5];
 }

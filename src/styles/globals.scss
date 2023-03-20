@@ -13,7 +13,7 @@ body {
 body {
   color: $primary-typography-color;
   background-color: $primary-bg-color;
-  background-image: url("/background-stars.jpeg");
+  background-image: url('/background-stars.jpeg');
   background-position: center top;
   background-repeat: repeat;
   background-size: 65%;
@@ -27,7 +27,7 @@ body {
     --rmsc-p: 12px;
     --rmsc-radius: 5px;
     --rmsc-h: 38px;
-    & [aria-expanded="true"] {
+    & [aria-expanded='true'] {
       border-bottom-left-radius: 0px;
       border-bottom-right-radius: 0px;
     }

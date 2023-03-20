@@ -1,1 +1,1 @@
-export { default as getStarship } from "./getStarship";
+export { default as getStarship } from './getStarship';

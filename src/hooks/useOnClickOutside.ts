@@ -1,15 +1,15 @@
-import { useEffect, RefObject, ReactNode } from "react";
+import { useEffect, RefObject, ReactNode } from 'react';
 
 export default function useOutsideClick(
   refs: Array<RefObject<HTMLElement> | undefined>,
-  handler?: () => void
+  handler?: () => void,
 ) {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (!handler) return;
 
       if (
-        event.target === document.getElementsByTagName("html")[0] &&
+        event.target === document.getElementsByTagName('html')[0] &&
         event.clientX >= document.documentElement.offsetWidth
       )
         return;
@@ -27,9 +27,9 @@ export default function useOutsideClick(
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [refs, handler]);
 }

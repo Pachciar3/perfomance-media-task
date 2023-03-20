@@ -1,6 +1,6 @@
-import { object, string, number, array } from "yup";
+import { object, string, number, array } from 'yup';
 
-import { filmSchema } from "../../validators/validateFilm";
+import { filmSchema } from '../../validators/validateFilm';
 
 export const allFilmsResponseSchema = object({
   count: number().required(),

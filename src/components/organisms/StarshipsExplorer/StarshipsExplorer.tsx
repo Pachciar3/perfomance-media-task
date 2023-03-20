@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { Option } from "react-multi-select-component";
+import { useState } from 'react';
+import { Option } from 'react-multi-select-component';
 
-import { Film } from "@/api/types/Film";
-import { Starship } from "@/api/types/Starship";
-import { getStarshipIdFromUrl } from "@/utils/getStarshipId";
-import { Starship as StarshipEl } from "@/components/molecules/Starship";
+import { Film } from '@/api/types/Film';
+import { Starship } from '@/api/types/Starship';
+import { getStarshipIdFromUrl } from '@/utils/getStarshipId';
+import { Starship as StarshipEl } from '@/components/molecules/Starship';
 
-import styles from "./StarshipsExplorer.module.scss";
-import ExplorerMultiSelect from "./components/ExplorerMultiSelect";
+import styles from './StarshipsExplorer.module.scss';
+import ExplorerMultiSelect from './components/ExplorerMultiSelect';
 
 export interface StarshipsExplorerProps {
   data?: Starship[] | null;
@@ -51,7 +51,7 @@ export default function StarshipsExplorer(props: StarshipsExplorerProps) {
       </div>
 
       <div className={styles.table}>
-        {starships?.length ? starships : "No data"}
+        {starships?.length ? starships : 'No data'}
       </div>
     </div>
   );

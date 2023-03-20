@@ -1,4 +1,4 @@
-import { object, string, array } from "yup";
+import { object, string, array } from 'yup';
 
 export const starshipSchema = object({
   name: string().required(),

@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import logo from "@/assets/logo.png";
-import { Routes } from "@/types/route";
+import logo from '@/assets/logo.png';
+import { Routes } from '@/types/route';
 
-import styles from "./Header.module.scss";
+import styles from './Header.module.scss';
 
 export default function Header() {
   return (

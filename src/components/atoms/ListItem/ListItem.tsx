@@ -1,4 +1,4 @@
-import styles from "./ListItem.module.scss";
+import styles from './ListItem.module.scss';
 
 export interface ListItemProps {
   name: string;

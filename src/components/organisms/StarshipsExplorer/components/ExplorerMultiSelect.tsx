@@ -1,9 +1,9 @@
-import { Dispatch, SetStateAction, useCallback } from "react";
-import { MultiSelect, Option } from "react-multi-select-component";
+import { Dispatch, SetStateAction, useCallback } from 'react';
+import { MultiSelect, Option } from 'react-multi-select-component';
 
-import { Film } from "@/api/types/Film";
+import { Film } from '@/api/types/Film';
 
-import styles from "./ExplorerMultiSelect.module.scss";
+import styles from './ExplorerMultiSelect.module.scss';
 
 export interface ExplorerMultiSelectProps {
   films?: Film[] | null;
@@ -18,7 +18,7 @@ export default function ExplorerMultiSelect(props: ExplorerMultiSelectProps) {
     (options: Option[]) => {
       setSelected(options);
     },
-    [setSelected]
+    [setSelected],
   );
 
   return films ? (
@@ -26,9 +26,9 @@ export default function ExplorerMultiSelect(props: ExplorerMultiSelectProps) {
       className={styles.root}
       disableSearch
       overrideStrings={{
-        selectSomeItems: "Filter by movies...",
-        allItemsAreSelected: "All movies are selected",
-        selectAll: "Select all movies",
+        selectSomeItems: 'Filter by movies...',
+        allItemsAreSelected: 'All movies are selected',
+        selectAll: 'Select all movies',
       }}
       onChange={handleChange}
       value={selected}

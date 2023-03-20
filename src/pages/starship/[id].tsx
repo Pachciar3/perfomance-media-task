@@ -1,11 +1,11 @@
-import { GetStaticProps } from "next/types";
+import { GetStaticProps } from 'next/types';
 
-import { RootLayout } from "@/layouts/RootLayout";
-import { StarshipDetails } from "@/components/pages/StarshipDetails";
-import { getStarship } from "@/api/methods/getStarship";
-import { Starship } from "@/api/types/Starship";
-import { getAllStarships } from "@/api/methods/getAllStarships";
-import { getStarshipIdFromUrl } from "@/utils/getStarshipId";
+import { RootLayout } from '@/layouts/RootLayout';
+import { StarshipDetails } from '@/components/pages/StarshipDetails';
+import { getStarship } from '@/api/methods/getStarship';
+import { Starship } from '@/api/types/Starship';
+import { getAllStarships } from '@/api/methods/getAllStarships';
+import { getStarshipIdFromUrl } from '@/utils/getStarshipId';
 
 interface StarshipDetailsPageProps {
   starship: Starship | undefined;
@@ -15,7 +15,7 @@ export default function StarshipDetailsPage(props: StarshipDetailsPageProps) {
   const { starship } = props;
   return (
     <RootLayout>
-      {starship && <StarshipDetails data={starship} />} {!starship && "404"}
+      {starship && <StarshipDetails data={starship} />} {!starship && '404'}
     </RootLayout>
   );
 }
@@ -50,7 +50,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps<StarshipDetailsPageProps> = async (
-  context
+  context,
 ) => {
   const res = context.params && (await getStarship(Number(context.params.id)));
   return {

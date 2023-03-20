@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import { Routes } from "@/types/route";
+import { Routes } from '@/types/route';
 
-import styles from "./Navigation.module.scss";
+import styles from './Navigation.module.scss';
 
 export interface StarshipsProps {
   next?: string | null;
@@ -14,7 +14,7 @@ export default function Starships(props: StarshipsProps) {
   const { next, previous } = props;
   const router = useRouter();
   const page =
-    typeof router.query.page === "string"
+    typeof router.query.page === 'string'
       ? Number(router.query.page)
       : undefined;
 

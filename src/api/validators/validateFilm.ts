@@ -1,4 +1,4 @@
-import { object, string, array, number } from "yup";
+import { object, string, array, number } from 'yup';
 
 export const filmSchema = object({
   title: string().required(),
