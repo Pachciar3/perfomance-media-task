@@ -9,7 +9,7 @@
     max-height: 180px;
     width: auto;
   }
-  @media (min-width: 768px) {
+  @include respond-to('small') {
     img {
       max-height: 260px;
     }

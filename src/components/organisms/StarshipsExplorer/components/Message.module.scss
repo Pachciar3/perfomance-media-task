@@ -1,0 +1,13 @@
+.message {
+  font-size: 20px;
+  padding: 40px 0px;
+  &__top {
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 14px;
+  }
+  &__bottom {
+    font-weight: 300;
+    text-align: center;
+  }
+}

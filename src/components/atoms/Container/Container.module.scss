@@ -1,0 +1,13 @@
+.root {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  @include respond-to('small') {
+    width: 664px;
+  }
+  @include respond-to('large') {
+    width: 1028px;
+    padding: 20px 40px;
+  }
+}

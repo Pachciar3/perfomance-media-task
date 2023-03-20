@@ -1,10 +1,4 @@
 .footer {
   text-align: center;
   padding: 40px;
-  a {
-    transition: ease-in-out 0.2s color;
-    &:hover {
-      color: $secondary-typography-color;
-    }
-  }
 }

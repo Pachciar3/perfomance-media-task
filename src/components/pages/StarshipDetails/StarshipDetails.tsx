@@ -1,10 +1,12 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
+import clsx from 'clsx';
 
 import { Starship } from '@/api/types/Starship';
 import { ListItem } from '@/components/atoms/ListItem';
 import { Button, styles as buttonStyles } from '@/components/atoms/Button';
+import containerStyles from '@/components/atoms/Container/Container.module.scss';
 
 import styles from './StarshipDetails.module.scss';
 
@@ -29,7 +31,7 @@ export default function StarshipDetails(props: StarshipDetailsProps) {
         <title>Performance Media - recruitment task - starship </title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className={styles.main}>
+      <main className={clsx(containerStyles.root, styles.main)}>
         <h1 className={styles.title}>{data.name}</h1>
         <ul className={styles.list}>
           <ListItem name="Model" value={data.model} />

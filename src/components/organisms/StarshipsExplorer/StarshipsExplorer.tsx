@@ -8,6 +8,7 @@ import { Starship as StarshipEl } from '@/components/molecules/Starship';
 
 import styles from './StarshipsExplorer.module.scss';
 import ExplorerMultiSelect from './components/ExplorerMultiSelect';
+import Message from './components/Message';
 
 export interface StarshipsExplorerProps {
   data?: Starship[] | null;
@@ -50,8 +51,8 @@ export default function StarshipsExplorer(props: StarshipsExplorerProps) {
         />
       </div>
 
-      <div className={styles.table}>
-        {starships?.length ? starships : 'No data'}
+      <div className={styles.wrapper}>
+        {starships?.length ? starships : <Message />}
       </div>
     </div>
   );

@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import clsx from 'clsx';
 
 import { Routes } from '@/types/route';
+import containerStyles from '@/components/atoms/Container/Container.module.scss';
 
 import styles from './Home.module.scss';
 
@@ -13,7 +15,7 @@ export default function Home() {
         <meta name="description" content="Integration with Starwars api" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className={styles.main}>
+      <main className={clsx(containerStyles.root, styles.main)}>
         <div>
           <h2>
             Show all starships <Link href={`${Routes.STARSHIPS}/1`}>here</Link>

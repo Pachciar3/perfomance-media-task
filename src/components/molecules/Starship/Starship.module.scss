@@ -1,6 +1,6 @@
 .root {
   position: relative;
-  width: 300px;
+  max-width: 300px;
   border-radius: 8px;
   a:hover {
     color: $primary-typography-color;
@@ -19,27 +19,32 @@
   }
   &::after,
   &::before {
+    content: '';
     position: absolute;
     bottom: 0;
     top: auto;
     border-top: 12px solid $secondary-bg-color;
-    content: '';
     width: 0;
     z-index: 0;
     box-sizing: border-box;
     overflow: hidden;
   }
-  h2 {
+  .title {
     padding-bottom: 14px;
     color: $secondary-typography-color;
   }
-  p {
+  .list {
+    list-style: none;
+  }
+  .item {
     padding-bottom: 10px;
     font-weight: 300;
-    span {
-      font-weight: 700;
-    }
   }
+  .name {
+    font-weight: 700;
+    padding-right: 4px;
+  }
+
   &::before {
     left: 0;
     border-right: 12px solid transparent;

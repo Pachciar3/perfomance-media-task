@@ -29,7 +29,7 @@
       outline: unset;
     }
   }
-  @media (min-width: 648px) {
+  @include respond-to('small') {
     &__name {
       width: 250px;
     }

@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-const path = require("path");
+const path = require('path');
 
 const nextConfig = {
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg")
+      rule.test?.test?.('.svg'),
     );
 
     config.module.rules.push(
@@ -21,8 +21,8 @@ const nextConfig = {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
         resourceQuery: { not: /url/ }, // exclude if *.svg?url
-        use: ["@svgr/webpack"],
-      }
+        use: ['@svgr/webpack'],
+      },
     );
 
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
@@ -32,14 +32,14 @@ const nextConfig = {
   },
   reactStrictMode: true,
   sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
-    additionalData: `@import "src/styles/variables.scss"; `,
+    includePaths: [path.join(__dirname, 'styles')],
+    additionalData: `@import "src/styles/variables.scss"; @import "src/styles/mixins.scss"; `,
   },
   async redirects() {
     return [
       {
-        source: "/starships",
-        destination: "/starships/1",
+        source: '/starships',
+        destination: '/starships/1',
         permanent: true,
       },
     ];

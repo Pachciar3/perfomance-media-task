@@ -1,11 +1,6 @@
 .main {
   flex-grow: 1;
-  padding: 20px 40px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  max-width: 1200px;
-  @media (min-width: 648px) {
-    margin: 0 auto;
-  }
 }

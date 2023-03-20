@@ -18,16 +18,21 @@ function Starships(props: StarshipProps) {
     <div className={styles.root} key={data.url}>
       <Link href={`${Routes.STARSHIP}/${linkId}`}>
         <div className={styles.root__content}>
-          <h2>{data.name}</h2>
-          <p>
-            <span>Model:</span> {data.model}
-          </p>
-          <p>
-            <span>Manufacturer:</span> {data.manufacturer}
-          </p>
-          <p>
-            <span>Starship class:</span> {data.starship_class}
-          </p>
+          <h2 className={styles.title}>{data.name}</h2>
+          <ul className={styles.list}>
+            <li className={styles.item}>
+              <span className={styles.name}>Model:</span>
+              {data.model}
+            </li>
+            <li className={styles.item}>
+              <span className={styles.name}>Manufacturer:</span>
+              {data.manufacturer}
+            </li>
+            <li className={styles.item}>
+              <span className={styles.name}>Starship class:</span>
+              {data.starship_class}
+            </li>
+          </ul>
         </div>
       </Link>
     </div>
