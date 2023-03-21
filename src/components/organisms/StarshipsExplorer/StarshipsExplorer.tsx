@@ -7,6 +7,7 @@ import { Starship } from '@/api/types/Starship';
 import { getStarshipIdFromUrl } from '@/utils/getStarshipId';
 import { Starship as StarshipEl } from '@/components/molecules/Starship';
 import { getAllStarships } from '@/api/methods/getAllStarships';
+import { Status } from '@/types/status';
 
 import styles from './StarshipsExplorer.module.scss';
 import ExplorerMultiSelect from './components/ExplorerMultiSelect';
@@ -38,7 +39,8 @@ async function getStarshipsFromAllPages() {
 export default function StarshipsExplorer(props: StarshipsExplorerProps) {
   const { data, films } = props;
   const [selected, setSelected] = useState<Option[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [status, setStatus] = useState<Status>(Status.IDLE);
+  const [allData, setAllData] = useState<Starship[] | null | undefined>(null);
   const [filteredData, setFilteredData] = useState<
     Starship[] | null | undefined
   >(data);
@@ -47,32 +49,37 @@ export default function StarshipsExplorer(props: StarshipsExplorerProps) {
   const page = Number(router.query.page);
   useEffect(() => {
     if (selected.length) {
-      setLoading(true);
-      getStarshipsFromAllPages()
-        .then((data) => {
-          const filteredData = data.filter((starship: Starship) => {
-            let show: boolean = true;
-            if (selected.length) {
-              show = false;
-              selected.forEach((item: Option) => {
-                if (starship.films.includes(item.value)) {
-                  show = true;
-                  return;
-                }
-              });
-              return show;
-            }
+      if (!allData && status !== Status.LOADING) {
+        setStatus(Status.LOADING);
+        getStarshipsFromAllPages()
+          .then((data) => {
+            setAllData(data);
+          })
+          .catch((e) => {
+            setStatus(Status.ERROR);
+            console.error(e);
           });
-          const splitedByPage = filteredData.slice((page - 1) * 10, page * 10);
-          setFilteredData(splitedByPage);
-          setLoading(false);
-        })
-        .catch((e) => {
-          setLoading(false);
-          console.error(e);
+      }
+      if (allData) {
+        const filteredData = allData.filter((starship: Starship) => {
+          let show: boolean = true;
+          if (selected.length) {
+            show = false;
+            selected.forEach((item: Option) => {
+              if (starship.films.includes(item.value)) {
+                show = true;
+                return;
+              }
+            });
+            return show;
+          }
         });
+        const splitedByPage = filteredData.slice((page - 1) * 10, page * 10);
+        setFilteredData(splitedByPage);
+        setStatus(Status.SUCCESS);
+      }
     }
-  }, [selected, data, page]);
+  }, [selected, data, page, allData, status]);
 
   const starships = selected.length ? filteredData : data;
   const starshipsMap =
@@ -87,14 +94,14 @@ export default function StarshipsExplorer(props: StarshipsExplorerProps) {
       <div className={styles.header}>
         <h2 className={styles.title}>Explore Starships:</h2>
         <ExplorerMultiSelect
-          disabled={loading}
+          disabled={status === Status.LOADING}
           setSelected={setSelected}
           selected={selected}
           films={films}
         />
       </div>
       <div className={styles.wrapper}>
-        {loading && (
+        {status === Status.LOADING && (
           <div className={styles.loading} title="loading..">
             <span className={styles.loader}>Loading...</span>
           </div>

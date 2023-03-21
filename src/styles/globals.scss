@@ -49,9 +49,20 @@ body {
     --rmsc-p: 12px;
     --rmsc-radius: 5px;
     --rmsc-h: 38px;
-    & [aria-expanded='true'] {
+    & > [aria-expanded='true'] {
       border-bottom-left-radius: 0px;
       border-bottom-right-radius: 0px;
+    }
+    & > .dropdown-container[aria-disabled='true'] {
+      opacity: 0.7;
+      .options .select-item:hover {
+        cursor: not-allowed;
+        background-color: $primary-bg-color !important;
+      }
+      &:focus-within {
+        border-color: rgb(255 255 255 / 34%);
+        box-shadow: none;
+      }
     }
     .dropdown-container:focus-within {
       border-color: rgb(255 255 255 / 34%);
