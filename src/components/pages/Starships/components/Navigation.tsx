@@ -26,7 +26,7 @@ export default function Starships(props: StarshipsProps) {
     <div className={styles.root}>
       {previous && page && (
         <LinkButton
-          className={clsx(styles.root__left, buttonStyles.big)}
+          className={styles.root__left}
           href={`${Routes.STARSHIPS}/${page - 1}`}
         >
           Previous page
@@ -34,7 +34,7 @@ export default function Starships(props: StarshipsProps) {
       )}
       {next && page && (
         <LinkButton
-          className={clsx(styles.root__right, buttonStyles.big)}
+          className={styles.root__right}
           href={`${Routes.STARSHIPS}/${page + 1}`}
         >
           Next page
