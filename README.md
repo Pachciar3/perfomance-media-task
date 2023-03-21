@@ -2,7 +2,7 @@
 
 The application that allows you to check information about starships in Star Wars
 
-![Screenshot](https://i.imgur.com/eKMed09.png)
+![Screenshot](https://i.imgur.com/FfbRdti_d.webp?maxwidth=760&fidelity=grand)
 
 ## Live
 
