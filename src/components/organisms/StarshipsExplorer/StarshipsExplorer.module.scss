@@ -26,11 +26,18 @@
   position: relative;
 }
 
-.loading {
+.curtain {
   position: absolute;
   inset: 0;
   background-color: #060606d4;
   z-index: 2;
+  .error {
+    display: block;
+    text-align: center;
+    padding: 20px 4px;
+    font-size: 20px;
+    color: #f00;
+  }
   .loader {
     z-index: 22;
     display: block;

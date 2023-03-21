@@ -102,10 +102,16 @@ export default function StarshipsExplorer(props: StarshipsExplorerProps) {
       </div>
       <div className={styles.wrapper}>
         {status === Status.LOADING && (
-          <div className={styles.loading} title="loading..">
+          <div className={styles.curtain} title="loading..">
             <span className={styles.loader}>Loading...</span>
           </div>
         )}
+        {status === Status.ERROR && (
+          <div className={styles.curtain}>
+            <span className={styles.error}>Error occurred, try again</span>
+          </div>
+        )}
+
         {starshipsMap?.length ? starshipsMap : <Message />}
       </div>
     </div>
