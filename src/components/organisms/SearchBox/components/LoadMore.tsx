@@ -3,6 +3,7 @@ import { Dispatch, memo, SetStateAction, useCallback } from 'react';
 import { getAllStarships } from '@/api/methods/getAllStarships';
 import { Starship } from '@/api/types/Starship';
 import { Button } from '@/components/atoms/Button';
+import { Status } from '@/types/status';
 
 import styles from './LoadMore.module.scss';
 
@@ -11,7 +12,7 @@ import Arrow from '../assets/arrow.svg';
 export interface LoadMoreProps {
   setResults: Dispatch<SetStateAction<Starship[] | null | undefined>>;
   setLoadMoreLink: Dispatch<SetStateAction<string | null>>;
-  setLoading: Dispatch<SetStateAction<boolean>>;
+  setStatus: Dispatch<SetStateAction<Status>>;
   loadMoreLink: string | null;
   value: string;
   loading: boolean;
@@ -22,7 +23,7 @@ function LoadMore(props: LoadMoreProps) {
   const {
     loadMoreLink,
     value,
-    setLoading,
+    setStatus,
     setResults,
     setLoadMoreLink,
     loading,
@@ -34,7 +35,7 @@ function LoadMore(props: LoadMoreProps) {
       const queryParams = new URLSearchParams(loadMoreLink);
       const page = queryParams.get('page');
       if (page) {
-        setLoading(true);
+        setStatus(Status.LOADING);
         getAllStarships(Number(page), value)
           .then((res) => {
             if (res?.results && results) {
@@ -42,15 +43,15 @@ function LoadMore(props: LoadMoreProps) {
               setResults(newResults);
             }
             setLoadMoreLink(res?.next);
-            setLoading(false);
+            setStatus(Status.SUCCESS);
           })
           .catch((e) => {
-            setLoading(false);
+            setStatus(Status.ERROR);
             console.error(e);
           });
       }
     }
-  }, [loadMoreLink, results, setLoadMoreLink, setLoading, setResults, value]);
+  }, [loadMoreLink, value, setStatus, results, setLoadMoreLink, setResults]);
 
   return loadMoreLink ? (
     <Button disabled={loading} onClick={handleLoadMore} className={styles.btn}>
