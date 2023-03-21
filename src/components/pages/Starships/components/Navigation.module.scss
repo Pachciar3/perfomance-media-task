@@ -1,15 +1,15 @@
 .root {
   max-width: 740px;
   width: 100%;
-  display: flex;
+  display: grid;
   justify-content: space-between;
   font-size: 24px;
   &__left {
     text-align: left;
-    align-self: start;
+    grid-column: 1;
   }
   &__right {
     text-align: right;
-    align-self: end;
+    grid-column: 2;
   }
 }
