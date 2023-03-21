@@ -1,3 +1,5 @@
+import swapi from '@/api/base';
+
 import { StarshipsResponse } from './StarshipsResponse';
 import { allStarshipsResponseSchema } from './validationSchema';
 
@@ -7,19 +9,13 @@ async function getAllStarships(
 ) {
   try {
     const query = searchQuery ? `&search=${searchQuery}` : '';
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/starships?page=${page}${query}&format=json`,
-    );
-    if (response.ok) {
-      const data = await response.json();
-      await allStarshipsResponseSchema.validate(data);
-      return data as StarshipsResponse;
-    } else {
-      throw new Error(`Bad response code: ${response.status}`);
-    }
+
+    const data = await swapi.get(`/starships?page=${page}${query}&format=json`);
+    await allStarshipsResponseSchema.validate(data);
+    return data as StarshipsResponse;
   } catch (e: unknown) {
     console.error(e);
-    throw new Error(`Unknown error: ${e}`);
+    throw new Error(`Error from ${getAllStarships.name}: ${e}`);
   }
 }
 

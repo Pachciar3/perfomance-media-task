@@ -13,10 +13,32 @@ body {
 body {
   color: $primary-typography-color;
   background-color: $primary-bg-color;
-  background-image: url('/background-stars.jpeg');
+  background-image: url('/background-shapes-vsmall.jpg');
   background-position: center top;
   background-repeat: repeat;
-  background-size: 65%;
+  background-size: 360px;
+
+  @include respond-to('small') {
+    background-image: url('/background-shapes-small.jpg');
+    background-size: 767px;
+  }
+  @include respond-to('medium') {
+    background-image: url('/background-shapes-medium.jpg');
+    background-size: 992px;
+  }
+  @include respond-to('large') {
+    background-image: url('/background-shapes-large.jpg');
+    background-size: 1200px;
+  }
+  @include respond-to('v-large') {
+    background-image: url('/background-shapes.jpg');
+    background-size: 1920px;
+  }
+
+  .sr-only {
+    display: none;
+  }
+
   .rmsc {
     --rmsc-main: #{$secondary-bg-color};
     --rmsc-hover: #{$secondary-bg-color};

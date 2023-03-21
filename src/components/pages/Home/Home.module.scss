@@ -4,4 +4,18 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
+  .title {
+    font-size: 34px;
+    padding-bottom: 18px;
+  }
+  .paragraph {
+    font-size: 18px;
+    padding-bottom: 14px;
+    max-width: 780px;
+    color: $tertiary-typography-color;
+  }
+  .btn {
+    margin-top: 24px;
+  }
 }

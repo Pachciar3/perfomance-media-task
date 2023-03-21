@@ -1,7 +1,8 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
+import clsx from 'clsx';
 
 import { Routes } from '@/types/route';
+import { LinkButton, styles as buttonStyles } from '@/components/atoms/Button';
 
 import styles from './Navigation.module.scss';
 
@@ -21,20 +22,20 @@ export default function Starships(props: StarshipsProps) {
   return (
     <div className={styles.root}>
       {previous && page && (
-        <Link
-          className={styles.root__left}
+        <LinkButton
+          className={clsx(styles.root__left, buttonStyles.big)}
           href={`${Routes.STARSHIPS}/${page - 1}`}
         >
           Previous page
-        </Link>
+        </LinkButton>
       )}
       {next && page && (
-        <Link
-          className={styles.root__right}
+        <LinkButton
+          className={clsx(styles.root__right, buttonStyles.big)}
           href={`${Routes.STARSHIPS}/${page + 1}`}
         >
           Next page
-        </Link>
+        </LinkButton>
       )}
     </div>
   );
