@@ -12,7 +12,6 @@ The application that allows you to check information about starships in Star War
 
 1. Fetch this project
 2. Run `npm install`
-3. Run `npm run prepare`
-4. Run `code .` and create `.env` file
-5. Write your environment variables based on `.env.example`
-6. Run `npm run start`
+3. Run `code .` and create `.env` file
+4. Write your environment variables based on `.env.example`
+5. Run `npm run start`
