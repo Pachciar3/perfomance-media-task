@@ -8,11 +8,12 @@ import styles from './ExplorerMultiSelect.module.scss';
 export interface ExplorerMultiSelectProps {
   films?: Film[] | null;
   selected: Option[];
+  disabled: boolean;
   setSelected: Dispatch<SetStateAction<Option[]>>;
 }
 
 export default function ExplorerMultiSelect(props: ExplorerMultiSelectProps) {
-  const { films, selected, setSelected } = props;
+  const { films, selected, setSelected, disabled } = props;
 
   const handleChange = useCallback(
     (options: Option[]) => {
@@ -26,17 +27,19 @@ export default function ExplorerMultiSelect(props: ExplorerMultiSelectProps) {
       <span className="sr-only" id="multi-select-label">
         Select filter by movie
       </span>
+
       <MultiSelect
         className={styles.root}
         disableSearch
+        disabled={disabled}
+        hasSelectAll={false}
         overrideStrings={{
           selectSomeItems: 'Filter by movies...',
           allItemsAreSelected: 'All movies are selected',
-          selectAll: 'Select all movies',
         }}
         onChange={handleChange}
         value={selected}
-        labelledBy="multi-select-label"
+        labelledBy="Select"
         options={films.map((film: Film) => ({
           value: film.url,
           label: film.title,

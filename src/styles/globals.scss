@@ -63,6 +63,7 @@ body {
       border-top: 0px;
       width: calc(100% + 2px);
       left: -1px;
+      z-index: 3;
       .panel-content {
         border-top-right-radius: 0px;
         border-top-left-radius: 0px;
