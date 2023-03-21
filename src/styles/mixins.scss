@@ -8,6 +8,9 @@ $breakpoints: (
   'large': (
     min-width: 1200px,
   ),
+  'v-large': (
+    min-width: 1920px,
+  ),
 ) !default;
 
 @mixin respond-to($breakpoint) {

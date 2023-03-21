@@ -11,8 +11,7 @@ export default function Header() {
     <header className={styles.header}>
       <Link href={Routes.HOME}>
         <Image
-          sizes="(max-width: 768px) 260px,
-          180px"
+          sizes="(max-width: 768px) 600px, 400px"
           src={logo}
           priority
           quality={1}

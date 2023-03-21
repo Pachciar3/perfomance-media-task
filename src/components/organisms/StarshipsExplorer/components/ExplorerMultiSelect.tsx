@@ -22,21 +22,26 @@ export default function ExplorerMultiSelect(props: ExplorerMultiSelectProps) {
   );
 
   return films ? (
-    <MultiSelect
-      className={styles.root}
-      disableSearch
-      overrideStrings={{
-        selectSomeItems: 'Filter by movies...',
-        allItemsAreSelected: 'All movies are selected',
-        selectAll: 'Select all movies',
-      }}
-      onChange={handleChange}
-      value={selected}
-      labelledBy="Select"
-      options={films.map((film: Film) => ({
-        value: film.url,
-        label: film.title,
-      }))}
-    />
+    <>
+      <span className="sr-only" id="multi-select-label">
+        Select filter by movie
+      </span>
+      <MultiSelect
+        className={styles.root}
+        disableSearch
+        overrideStrings={{
+          selectSomeItems: 'Filter by movies...',
+          allItemsAreSelected: 'All movies are selected',
+          selectAll: 'Select all movies',
+        }}
+        onChange={handleChange}
+        value={selected}
+        labelledBy="multi-select-label"
+        options={films.map((film: Film) => ({
+          value: film.url,
+          label: film.title,
+        }))}
+      />
+    </>
   ) : null;
 }

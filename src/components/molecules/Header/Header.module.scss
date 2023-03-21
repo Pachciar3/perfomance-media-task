@@ -2,16 +2,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   padding: 40px;
   text-align: center;
+  height: auto;
   img {
-    max-height: 180px;
-    width: auto;
+    width: 400px;
+    height: auto;
   }
   @include respond-to('small') {
     img {
-      max-height: 260px;
+      width: 600px;
     }
   }
 }
