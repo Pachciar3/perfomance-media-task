@@ -1,12 +1,18 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import clsx from 'clsx';
 
 import { Starship } from '@/api/types/Starship';
 import { ListItem } from '@/components/atoms/ListItem';
-import { Button, styles as buttonStyles } from '@/components/atoms/Button';
+import {
+  Button,
+  LinkButton,
+  styles as buttonStyles,
+} from '@/components/molecules/Button';
 import containerStyles from '@/components/atoms/Container/Container.module.scss';
+import { useAppContext } from '@/components/context/main';
+import { Routes } from '@/types/route';
 
 import styles from './StarshipDetails.module.scss';
 
@@ -17,6 +23,7 @@ export interface StarshipDetailsProps {
 export default function StarshipDetails(props: StarshipDetailsProps) {
   const { data } = props;
   const router = useRouter();
+  const context = useAppContext();
 
   const goBack = useCallback(() => {
     router.back();
@@ -52,10 +59,19 @@ export default function StarshipDetails(props: StarshipDetailsProps) {
           <ListItem name="Created" value={createDate.toUTCString()} />
           <ListItem name="Edited" value={editedDate.toUTCString()} />
         </ul>
-
-        <Button className={buttonStyles.big} onClick={goBack}>
-          Back
-        </Button>
+        {context?.lastInternalLink && (
+          <Button className={buttonStyles.big} onClick={goBack}>
+            Back
+          </Button>
+        )}
+        {!context?.lastInternalLink && (
+          <LinkButton
+            href={`${Routes.STARSHIPS}/1`}
+            className={buttonStyles.big}
+          >
+            Show all starships
+          </LinkButton>
+        )}
       </main>
     </>
   );
