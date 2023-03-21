@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { memo } from 'react';
 
+import { InternalLink } from '@/components/atoms/InternalLink';
 import { Starship } from '@/api/types/Starship';
 import { Routes } from '@/types/route';
 
@@ -16,7 +16,7 @@ function Starships(props: StarshipProps) {
 
   return (
     <div className={styles.root} key={data.url}>
-      <Link href={`${Routes.STARSHIP}/${linkId}`}>
+      <InternalLink href={`${Routes.STARSHIP}/${linkId}`}>
         <div className={styles.root__content}>
           <h2 className={styles.title}>{data.name}</h2>
           <ul className={styles.list}>
@@ -34,7 +34,7 @@ function Starships(props: StarshipProps) {
             </li>
           </ul>
         </div>
-      </Link>
+      </InternalLink>
     </div>
   );
 }

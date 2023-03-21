@@ -1,11 +1,8 @@
-import {
-  AnchorHTMLAttributes,
-  DetailedHTMLProps,
-  memo,
-  ReactNode,
-} from 'react';
+import { memo, ReactNode } from 'react';
 import clsx from 'clsx';
-import Link, { LinkProps } from 'next/link';
+import { LinkProps } from 'next/link';
+
+import { InternalLink } from '@/components/atoms/InternalLink';
 
 import styles from './Button.module.scss';
 
@@ -19,7 +16,7 @@ function Button(props: LinkButtonProps) {
   const { children, className: _className, ...restOfProps } = props;
 
   return (
-    <Link
+    <InternalLink
       className={clsx(
         styles.button,
         restOfProps.disabled && styles.disabled,
@@ -28,7 +25,7 @@ function Button(props: LinkButtonProps) {
       {...restOfProps}
     >
       {children}
-    </Link>
+    </InternalLink>
   );
 }
 

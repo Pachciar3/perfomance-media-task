@@ -2,7 +2,7 @@ import { Dispatch, memo, SetStateAction, useCallback } from 'react';
 
 import { getAllStarships } from '@/api/methods/getAllStarships';
 import { Starship } from '@/api/types/Starship';
-import { Button } from '@/components/atoms/Button';
+import { Button } from '@/components/molecules/Button';
 import { Status } from '@/types/status';
 
 import styles from './LoadMore.module.scss';

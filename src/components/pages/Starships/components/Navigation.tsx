@@ -2,7 +2,10 @@ import { useRouter } from 'next/router';
 import clsx from 'clsx';
 
 import { Routes } from '@/types/route';
-import { LinkButton, styles as buttonStyles } from '@/components/atoms/Button';
+import {
+  LinkButton,
+  styles as buttonStyles,
+} from '@/components/molecules/Button';
 
 import styles from './Navigation.module.scss';
 

@@ -1,10 +1,12 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import clsx from 'clsx';
 
 import { Routes } from '@/types/route';
 import containerStyles from '@/components/atoms/Container/Container.module.scss';
-import { LinkButton, styles as stylesButton } from '@/components/atoms/Button';
+import {
+  LinkButton,
+  styles as stylesButton,
+} from '@/components/molecules/Button';
 
 import styles from './Home.module.scss';
 
@@ -18,9 +20,7 @@ export default function Home() {
       </Head>
       <main className={clsx(containerStyles.root, styles.main)}>
         <div>
-          <h2 className={styles.title}>
-            Show all starships <Link href={`${Routes.STARSHIPS}/1`}>here</Link>
-          </h2>
+          <h2 className={styles.title}>Welcome to Star Wars explorer page</h2>
           <p className={styles.paragraph}>
             Welcome to our Star Wars starships explorer page! If you are a fan
             of the iconic space franchise, then you will love exploring the
