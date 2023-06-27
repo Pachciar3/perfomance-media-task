@@ -39,7 +39,7 @@ export default function ExplorerMultiSelect(props: ExplorerMultiSelectProps) {
         }}
         onChange={handleChange}
         value={selected}
-        labelledBy="Select"
+        labelledBy="multi-select-label"
         options={films.map((film: Film) => ({
           value: film.url,
           label: film.title,
