@@ -6,7 +6,7 @@ The application that allows you to check information about starships in Star War
 
 ## Live
 
-[https://perfomance-media-task.vercel.app/starships/1](https://perfomance-media-task.vercel.app/starships/1)
+[https://star-wars-dp.vercel.app](https://star-wars-dp.vercel.app)
 
 ## Development
 
