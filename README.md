@@ -1,4 +1,4 @@
-# Performance Media - recruitment task
+# Star Wars explorer
 
 The application that allows you to check information about starships in Star Wars
 
